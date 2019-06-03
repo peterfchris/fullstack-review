@@ -15,7 +15,7 @@ class Details extends Component {
 			})
 	}
 
-	handleUserLogout = () => {
+	handleUserLogout = () => { //how do I know when to pass in an argument in these, and when not to?
 		axios.get('/auth/logout').then((res) => {
 			this.props.clearUser()
 			this.props.history.push('/')
@@ -45,7 +45,7 @@ function mapStateToProps(reduxState) {
 	}
 }
 
-const mapDispatchToProps = {
+const mapDispatchToProps = { //What is this doing? What is dispatch?
 	updateUser,
 	clearUser
 }

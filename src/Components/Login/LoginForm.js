@@ -12,12 +12,12 @@ class LoginForm extends Component {
 	}
 	handleLoginInfoUpdate = (e) => {
 		this.setState({
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.value // This allows the backend to track what's being filled in and where
 		})
 	}
 
 	handleUserLogin = (e) => {
-		e.preventDefault()
+		e.preventDefault() //Forms submit automatically, this prevents that auto submission until the button's clicked
 		const { username, password } = this.state
 		axios
 			.post('/auth/login', { username, password })
@@ -36,10 +36,10 @@ class LoginForm extends Component {
 				<h1>Login</h1>
 				<form onSubmit={this.handleUserLogin}>
 					<input
-						type='text'
-						name='username'
-						placeholder='username'
-						onChange={this.handleLoginInfoUpdate}
+						type='text' //I don't know what this does
+						name='username' //I don't know what this does
+						placeholder='username' //this puts faded out text in the input field to help with UI experience
+						onChange={this.handleLoginInfoUpdate} //this makes it so that when the user types into the input field, the handle above is triggered.
 					/>
 					<input
 						type='password'
@@ -54,4 +54,4 @@ class LoginForm extends Component {
 	}
 }
 
-export default withRouter(LoginForm)
+export default withRouter(LoginForm) //Why is the withRouter needed? What does it do?

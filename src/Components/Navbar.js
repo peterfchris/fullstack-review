@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-const Navbar = ({ username }) => {
+const Navbar = ({ username }) => { //I do not understand what line 10 does
 	return (
 		<nav>
 			<Link to='/'>Home</Link>
 			<Link to='/login'>Login</Link>
-			<span>{username && username}</span>
+			<span>{username && username}</span> 
 		</nav>
 	)
 }
